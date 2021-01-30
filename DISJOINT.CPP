@@ -1,12 +1,15 @@
 #include<stdio.h>
-struct Disjset{
+struct Disjset
+{
 int parent[10];
 int rank[10];
 int n;
-}dis;
+}
+dis;
 void makeset()
 {
-for(inti=0;i<dis.n,i++)
+int i
+for(i=0;i<dis.n;i++)
 {
 dis.parent[i]=i;
 dis.rank[i]=0;
@@ -14,8 +17,9 @@ dis.rank[i]=0;
 }
 void displayset()
 {
+int i
 printf("\nparent array\n");
-for(inti=0;i<dis.n,i++)
+for(i=0;i<dis.n;i++)
 {
 printf("%d",dis.parent[i];
 }
@@ -43,24 +47,28 @@ return;
 if (dis.rank[xset]<dis.rank[yset])
 {
 dis.parent[xset]=yset;
-dis.rank[yset]=1;
+dis.rank[yset]=-1;
 }
-else{
+else if (dis.rank[xset]>dis.rank[yset])
+{
 dis.parent[yset]=xset;
-dis.rank[xset]=dis.rank[xset]+1;
-dis.rank[yset]=1;
+dis.rank[yset]=-1;
 }
+else
+{
+dis.parent[yset]=xset;
+dis.rank[xset=dis.rank[xset]+1;
+dis.rank[yset]=-1;
 }
+         }
 int main()
 {
-int n,x,y;
+int n,x,y,ch,wish;
 printf("how many elements?");
 scanf(%d",&dis.n);
 makeset();
-int ch,wish;
 do
 {
-
 printf("\n  menu  \n");
 printf("1.Union \n2Find\n3.display\n");
 printf("enter choice\n");
